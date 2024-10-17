@@ -57,6 +57,30 @@
             background-color: #4CAF50;
             color: white;
         }
+        #aboutMe {
+            position: relative;
+            padding: 50px;
+            border-radius: 10px;
+            color: white; /* Ensure text is readable */
+            overflow: hidden; /* To contain the blurred background */
+        }
+        #aboutMe::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://github.com/Naeemahmd/naeemahmd.github.io/raw/main/aboutme.png') no-repeat center center;
+            background-size: cover;
+            filter: blur(8px); /* Adjust the blur intensity */
+            z-index: 0; /* Place behind text */
+        }
+
+        #aboutMe h2, #aboutMe p {
+            position: relative;
+            z-index: 1; /* Place in front of the blurred background */
+        }
         .content-section {
             display: none;
             background-color: white;
@@ -148,6 +172,7 @@
     <div id="aboutMe" class="content-section active">
         <h2>About Me</h2>
         <p>I am a data and AI specialist with over 2 years of experience. My expertise lies in designing and deploying data solutions that support decision-making, building machine learning models, and creating business intelligence dashboards. I have an entrepreneurial mindset and a strong adaptability, always seeking innovative ways to apply cutting-edge technology to solve real-world problems. I’m passionate about driving transformative change and delivering data-driven solutions to complex challenges.</p>
+        
     </div>
 
     <!-- Experience Section -->
