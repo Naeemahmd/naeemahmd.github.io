@@ -3,67 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naeem Ahammed Portfolio</title>
+    <title>Naeem Ahammed - Data Science & AI Specialist</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f4f4f9;
             color: #333;
         }
         header {
-            background: url('/mnt/data/A_sophisticated,_elegant_background_image_for_a_pr.png') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/mnt/data/A_sophisticated,_elegant_background_image_for_a_pr.png') no-repeat center center;
             background-size: cover;
             color: white;
             text-align: center;
-            padding: 100px 0;
+            padding: 100px 20px;
         }
         header h1 {
-            font-size: 3rem;
-            margin: 0;
+            font-size: 4rem;
+            margin-bottom: 10px;
         }
         header p {
             font-size: 1.5rem;
+            font-weight: 300;
             margin-top: 10px;
         }
         section {
             padding: 50px;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .tabs {
             display: flex;
             justify-content: space-around;
+            background-color: #333;
             margin-bottom: 20px;
+            border-radius: 5px;
         }
         .tabs button {
-            background-color: #4CAF50;
+            background-color: transparent;
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1rem;
+            padding: 15px;
+            font-size: 1.1rem;
             cursor: pointer;
+            flex: 1;
+            transition: background-color 0.3s ease;
         }
         .tabs button:hover {
-            background-color: #3e8e41;
+            background-color: #555;
         }
         .content-section {
             display: none;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
         .content-section.active {
             display: block;
+        }
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .content-section p, ul {
+            font-size: 1.2rem;
+            line-height: 1.6;
         }
         footer {
             text-align: center;
             padding: 30px;
             background-color: #333;
             color: white;
+            margin-top: 50px;
         }
         footer p {
-            margin: 5px;
+            margin: 10px 0;
         }
-        a {
+        footer a {
             color: #4CAF50;
             text-decoration: none;
         }
@@ -81,31 +99,40 @@
 <body>
 
 <header>
-    <h1>Naeem Ahammed Theyyathum Kadavath</h1>
-    <p>Data Scientist | Data Engineer | Machine Learning Enthusiast</p>
+    <h1>Naeem Ahammed</h1>
+    <p>Data Science & AI Specialist</p>
 </header>
 
 <section>
     <div class="tabs">
         <button onclick="showContent('aboutMe')">About Me</button>
         <button onclick="showContent('experience')">Experience</button>
+        <button onclick="showContent('skills')">Skills</button>
+        <button onclick="showContent('projects')">Projects</button>
+        <button onclick="showContent('education')">Education</button>
+        <button onclick="showContent('certificates')">Certificates</button>
         <button onclick="showContent('contact')">Contact</button>
     </div>
     
+    <!-- About Me Section -->
     <div id="aboutMe" class="content-section active">
         <h2>About Me</h2>
-        <p>I am a team-oriented data professional with 2 years of experience designing, deploying, and implementing data solutions. I am passionate about solving real-world problems using cutting-edge technology and supporting decision-making through data-driven insights.</p>
+        <p>I am a data science and AI specialist with over 2 years of experience. My expertise lies in designing and deploying data solutions that support decision-making, building machine learning models, and creating business intelligence dashboards. I’m passionate about applying cutting-edge technology to solve real-world problems.</p>
     </div>
 
+    <!-- Experience Section -->
     <div id="experience" class="content-section">
-        <h2>Experience</h2>
-        <p><strong>Data Science Engineer Intern</strong> – IntPurple Technologies, Malta <br><em>Feb 2024 - Oct 2024</em></p>
+        <h2>Professional Experience</h2>
+        <h3>Data Science Engineer Intern</h3>
+        <p>IntPurple Technologies, Malta | Feb 2024 - Oct 2024</p>
         <ul>
-            <li>Developed role-based access control (RBAC) backend.</li>
-            <li>Built and refined RESTful APIs with Django.</li>
-            <li>Created BI dashboards using Metabase for real-time reporting.</li>
+            <li>Developed backend for role-based access control (RBAC), improving security protocols.</li>
+            <li>Built and refined RESTful APIs with Django for enhanced data integration.</li>
+            <li>Collaborated on a chatbot with Azure OpenAI API, speeding up customer onboarding.</li>
+            <li>Created BI dashboards using Metabase for real-time reporting and decision-making.</li>
         </ul>
-        <p><strong>Data Scientist Intern</strong> – INFOdation B.V, Netherlands <br><em>Sep 2022 - Aug 2023</em></p>
+        <h3>Data Scientist Intern</h3>
+        <p>INFOdation B.V, Netherlands | Sep 2022 - Aug 2023</p>
         <ul>
             <li>Optimized LSTM models for energy demand forecasting.</li>
             <li>Processed data with Python and SQL for energy forecasting.</li>
@@ -113,6 +140,68 @@
         </ul>
     </div>
 
+    <!-- Skills Section -->
+    <div id="skills" class="content-section">
+        <h2>Professional Skills</h2>
+        <ul>
+            <li><strong>Languages:</strong> Python | SQL</li>
+            <li><strong>Frameworks & Libraries:</strong> Django | TensorFlow | Keras | Scikit-learn | Matplotlib | RESTful API | NumPy | Pandas</li>
+            <li><strong>Data Analytics & ML:</strong> Statistical Analysis | Time Series Analysis | Predictive Modeling | BI</li>
+            <li><strong>Backend Development & APIs</strong></li>
+            <li><strong>Configuration & Deployment:</strong> Nginx | Docker</li>
+            <li><strong>Cloud:</strong> Google Cloud (Vertex AI)</li>
+            <li><strong>Database Management & Integration</strong></li>
+            <li><strong>Project Management:</strong> Agile</li>
+            <li><strong>Version Control:</strong> Git | GitHub | BitBucket</li>
+            <li><strong>Prompting</strong></li>
+        </ul>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="content-section">
+        <h2>Projects</h2>
+        <h3>Data Engineering with AWS</h3>
+        <p>Bootcamp in progress, learning with Hadoop, Apache Hive, Kafka, MongoDB, PySpark, DataBricks, and more.</p>
+        <h3>Image Captioning System</h3>
+        <ul>
+            <li>Designed and trained a hybrid model with ResNet50 for CNN-based feature extraction and transformers for generating captions.</li>
+            <li>Demonstrated accurate caption generation for unseen images.</li>
+        </ul>
+        <h3>Sentiment Analysis Model</h3>
+        <ul>
+            <li>Developed a sentiment analysis model using Logistic Regression with 89.22% accuracy.</li>
+            <li>Implemented text preprocessing and TF-IDF for feature extraction.</li>
+        </ul>
+    </div>
+
+    <!-- Education Section -->
+    <div id="education" class="content-section">
+        <h2>Education</h2>
+        <h3>Masters in Statistical Methods and Applications</h3>
+        <p>SAPIENZA UNIVERSITY OF ROME, ITALY | Jan 2021 - Jan 2024</p>
+        <ul>
+            <li>Courses: Big Data, Sample Survey, Machine Learning.</li>
+            <li>Erasmus+Traineeship Winner | LazioDisco Scholarship Winner</li>
+        </ul>
+        <h3>Bachelor of Science: Statistics</h3>
+        <p>CALICUT UNIVERSITY, KERALA, INDIA | June 2017 - Apr 2020</p>
+        <ul>
+            <li>Courses: Statistics, Mathematics, Actuarial Science</li>
+            <li>Captain of football team, Farook College (2019-2020)</li>
+        </ul>
+    </div>
+
+    <!-- Certificates Section -->
+    <div id="certificates" class="content-section">
+        <h2>Certificates</h2>
+        <ul>
+            <li>Data Analytics Virtual Experience, Accenture - 4 weeks</li>
+            <li>Time Series Analysis, Udemy - 8 weeks</li>
+            <li>Foundations: Data, Data, Everywhere, Coursera (Google) - 4 weeks</li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
     <div id="contact" class="content-section">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:naeemahammedtk30@gmail.com">naeemahammedtk30@gmail.com</a></p>
