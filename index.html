@@ -13,7 +13,7 @@
             color: #333;
         }
         header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/mnt/data/A_sophisticated,_elegant_background_image_for_a_pr.png') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/mnt/data/image_background.png') no-repeat center center;
             background-size: cover;
             color: white;
             text-align: center;
@@ -99,44 +99,60 @@
 <body>
 
 <header>
-    <h1>Naeem Ahammed</h1>
-    <p>Data Science & AI Specialist</p>
+    <h1>Naeem Ahammed Theyyathum kadavath</h1>
+    <p>Data & AI Specialist</p>
 </header>
 
 <section>
     <div class="tabs">
         <button onclick="showContent('aboutMe')">About Me</button>
-        <button onclick="showContent('experience')">Experience</button>
-        <button onclick="showContent('skills')">Skills</button>
+        <button onclick="showContent('experience')">Professional Experience</button>
+        <button onclick="showContent('skills')">Professional Skills</button>
         <button onclick="showContent('projects')">Projects</button>
         <button onclick="showContent('education')">Education</button>
         <button onclick="showContent('certificates')">Certificates</button>
+        <button onclick="showContent('languages')">Languages</button>
+        <button onclick="showContent('entrepreneurial')">Entrepreneurial Journey </button>
         <button onclick="showContent('contact')">Contact</button>
     </div>
     
     <!-- About Me Section -->
     <div id="aboutMe" class="content-section active">
         <h2>About Me</h2>
-        <p>I am a data science and AI specialist with over 2 years of experience. My expertise lies in designing and deploying data solutions that support decision-making, building machine learning models, and creating business intelligence dashboards. I’m passionate about applying cutting-edge technology to solve real-world problems.</p>
+        <p>I am a data and AI specialist with over 2 years of experience. My expertise lies in designing and deploying data solutions that support decision-making, building machine learning models, and creating business intelligence dashboards. I have an entrepreneurial mindset and a strong adaptability, always seeking innovative ways to apply cutting-edge technology to solve real-world problems. I’m passionate about driving transformative change and delivering data-driven solutions to complex challenges.</p>
     </div>
 
     <!-- Experience Section -->
     <div id="experience" class="content-section">
         <h2>Professional Experience</h2>
         <h3>Data Science Engineer Intern</h3>
-        <p>IntPurple Technologies, Malta | Feb 2024 - Oct 2024</p>
+        <p>IntPurple Technologies | Birkirkara, Malta | Feb 2024 - Oct 2024</p>
         <ul>
             <li>Developed backend for role-based access control (RBAC), improving security protocols.</li>
             <li>Built and refined RESTful APIs with Django for enhanced data integration.</li>
-            <li>Collaborated on a chatbot with Azure OpenAI API, speeding up customer onboarding.</li>
+            <li>Designed the database structure to support RBAC and data collection.</li>
+            <li>Worked closely with cross-functional teams in an agile environment to ensure seamless integration of authentication systems and API endpoints.</li>
+            <li>Collaborated on a chatbot solution  with Azure OpenAI API, speeding up customer onboarding.</li>
             <li>Created BI dashboards using Metabase for real-time reporting and decision-making.</li>
+            <li>Assisted in the assembly of prototype products for testing purposes.</li>
         </ul>
         <h3>Data Scientist Intern</h3>
-        <p>INFOdation B.V, Netherlands | Sep 2022 - Aug 2023</p>
+        <p>INFOdation B.V | Bodegraven,Netherlands | Sep 2022 - Aug 2023</p>
         <ul>
-            <li>Optimized LSTM models for energy demand forecasting.</li>
-            <li>Processed data with Python and SQL for energy forecasting.</li>
-            <li>Deployed models on Google Cloud using Docker.</li>
+            <li>Built and optimized LSTM models for energy demand forecasting, increasing accuracy by 7% for Kikker Energy.</li>
+            <li>Leveraged Python and SQL for data fetching and processing from 15-minute meter readings. </li>
+            <li>Applied statistical analysis and regression to identify trends and improve forecasting models, reducing MAPE. </li>
+            <li>Implemented supervised ML method for models and trained and fine-tuned models with LSTM networks.</li>
+            <li>Created visualizations using Matplotlib to aid stakeholder decision-making.</li>
+            <li>Integrated external data via APIs and managed projects using GitHub, enhancing collaboration.</li>
+            <li>Deployed machine learning models on GCP with Docker, improving performance by 20%.</li>
+        </ul>
+        <h3>Sales and Quality Analyst Intern </h3>
+        <p>Bizotik | Kerala,India | Sep 2022 - Aug 2023</p>
+        <ul>
+            <li>Analyzed sales trends to support data-driven business decisions.</li>
+            <li>Inspected products to ensure compliance with quality standards and established tolerance levels, reducing defect by 10%.</li>
+            <li>Collaborated on product presentation and advertising, increasing sales by 25%.</li>
         </ul>
     </div>
 
@@ -172,6 +188,11 @@
             <li>Developed a sentiment analysis model using Logistic Regression with 89.22% accuracy.</li>
             <li>Implemented text preprocessing and TF-IDF for feature extraction.</li>
         </ul>
+        <h3>A Comparative Analysis of Energy Demand Forecasting Models with Emphasis on LSTM</h3>
+        <ul>
+            <li>Compared Prophet, SARIMAX, and LSTM models to assess forecasting abilities.</li>
+            <li>LSTM model achieved superior performance by showing an impressive MAE of 763Wh. Highlighted LSTM's effectiveness in capturing intricate temporal relationships.</li>
+        </ul>
     </div>
 
     <!-- Education Section -->
@@ -187,6 +208,8 @@
         <p>CALICUT UNIVERSITY, KERALA, INDIA | June 2017 - Apr 2020</p>
         <ul>
             <li>Courses: Statistics, Mathematics, Actuarial Science</li>
+            <li>Students body member of PG and Research department of Statistics (2018-2020).</li>
+            <li>Volunteered in National Service Scheme, India. (2015-2020)</li>
             <li>Captain of football team, Farook College (2019-2020)</li>
         </ul>
     </div>
@@ -198,15 +221,59 @@
             <li>Data Analytics Virtual Experience, Accenture - 4 weeks</li>
             <li>Time Series Analysis, Udemy - 8 weeks</li>
             <li>Foundations: Data, Data, Everywhere, Coursera (Google) - 4 weeks</li>
+            <li>Introduction to data analytics for business, Coursera, University of Colorado Boulder - 4 week</li>
+            <li>Advanced linear models for Data science, Coursera, Johns Hopkins University - 4 week</li>
+            <li>Career Edge- Knockdown the lockdown, TCS - 4 week</li>
+            <li>Statistical analysis using SPSS software, RSRI - 1 week</li>
+        </ul>
+    </div>
+
+    <!-- Languages Section -->
+    <div id="languages" class="content-section">
+        <h2>Languages</h2>
+        <ul>
+            <li><strong>ENGLISH:</strong> Proficient</li>
+            <li><strong>HINDI:</strong> Intermediate</li>
+            <li><strong>MALAYALAM:</strong> Proficient</li>
+            <li><strong>ITALIAN:</strong> Intermediate</li>
+        </ul>
+    </div>
+    
+    <!-- Entrepreneurial Section -->
+    <div id="entrepreneurial" class="content-section">
+        <h2>Entrepreneurial Journey</h2>
+        <h3>Founding Team Member,CEF Business Center (Kerala, 2023- present )</h3>
+        <p>Established a coworking space to foster collaboration, support business growth, and create a network for local entrepreneurs.</p>
+        
+        <h3>Co-founder, Homework(Kerala, 2020 - 2021)</h3>
+        <ul>
+            <li>Provided One-to-One tuition for students from lower primary school to higher secondary.</li>
+            <li>Implemented the idea to provide tailored solution for kids to excel, based on their capability.</li>
+        </ul>
+
+        <h3>Co-founder, NinthExit (Kerala, 2019 - 2020 )</h3>
+        <ul>
+            <li>Developed the concept of a creative hotel chain with unique features, such as an outing space and rental kiosks for small ventures.</li>
+            <li>Launched the business during my bachelor studies.</li>
         </ul>
     </div>
 
     <!-- Contact Section -->
     <div id="contact" class="content-section">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:naeemahammedtk30@gmail.com">naeemahammedtk30@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/Naeemahmd">Naeemahmd</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/naeem-ahammed">naeem-ahammed</a></p>
+        <form action="mailto:naeemahammedtk30@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            
+            <input type="submit" value="Send Message">
+        </form>
+        <p>Phone: +39 3483035294</p>
     </div>
 </section>
 
