@@ -91,16 +91,19 @@
             color: white;
         }
         .content-section {
-            display: none;
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.3s ease;
+            display: none; /* Initially hidden */
+            background-color: white; /* Background color */
+            border-radius: 10px; /* Rounded corners */
+            padding: 30px; /* Inner padding */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Slide in effect */
         }
         .content-section.active {
-            display: block;
-            opacity: 1;
+            display: block; /* Show active section */
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Reset translation */
         }
         /* Styling for the Experience Timeline */
         #experience {
@@ -173,7 +176,26 @@
             opacity: 1;
             transform: translateX(0);
         }
+        .contact-info {
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            align-items: flex-start; /* Align items to the start */
+            margin-top: 20px; /* Add space above contact info */
+        }
 
+        .contact-info p {
+            margin: 10px 0; /* Add vertical space between paragraphs */
+            color: #333; /* Set text color */
+            font-size: 1rem; /* Adjust font size */
+        }
+
+        .contact-info a {
+            color: #0077B5; /* Link color for LinkedIn */
+            text-decoration: none; /* Remove underline */
+        }
+        .contact-info a:hover {
+            text-decoration: underline; /* Underline on hover for better visibility */
+        }
         footer {
             text-align: center;
             padding: 30px;
@@ -421,9 +443,9 @@
     <div id="contact" class="content-section">
         <h2>Contact Me on</h2>
         <div class="contact-info">
-            <p>📧 <a href="mailto:naeemahammedtk30@gmail.com">naeemahammedtk30@gmail.com</a></p>
-            <p>📞 +39 3483035294</p>
-            <p>💼 <a href="https://www.linkedin.com/in/naeem-ahammed" target="_blank">naeem-ahammed</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:naeemahammedtk30@gmail.com">naeemahammedtk30@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> +39 3483035294</p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/naeem-ahammed" target="_blank">naeem-ahammed</a></p>
         </div>
     </div>
 </section>
