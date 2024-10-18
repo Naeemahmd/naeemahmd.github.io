@@ -38,18 +38,29 @@
             margin: 0 auto;
         }
         .social-icons {
-            display: flex;
-            flex-direction: column; /* Arrange items vertically */
-            align-items: center; /* Center align the items */
+            display: flex; /* Arrange items in a single line */
+            justify-content: center; /* Center align the items */
             margin-top: 20px; /* Add space above social icons */
         }
 
         .social-icons a {
-            color: white; /* Set text color to white */
+            color: white; /* Set default text color to white */
             text-decoration: none; /* Remove underline */
-            margin: 10px 0; /* Add space between links */
+            margin: 0 15px; /* Add horizontal space between links */
             font-size: 1.2rem; /* Adjust font size */
             transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        .linkedin {
+            color: #0077B5; /* LinkedIn blue color */
+        }
+
+        .email {
+            color: #f44336; /* Red color for email */
+        }
+
+        .github {
+            color: white; /* Keep GitHub color white */
         }
 
         .social-icons a:hover {
@@ -229,13 +240,13 @@
     <h1>Naeem Ahammed Theyyathum Kadavath</h1>
     <p>Data & AI Specialist</p>
     <div class="social-icons">
-        <a href="https://www.linkedin.com/in/naeem-ahammed" target="_blank" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/naeem-ahammed" target="_blank" title="LinkedIn" class="linkedin">
             <i class="fab fa-linkedin"></i> Naeem Ahammed
         </a>
-        <a href="https://github.com/Naeemahmd" target="_blank" title="GitHub">
+        <a href="https://github.com/Naeemahmd" target="_blank" title="GitHub" class="github">
             <i class="fab fa-github"></i> Naeemahmd
         </a>
-        <a href="mailto:naeemahammedtk30@gmail.com" title="Email">
+        <a href="mailto:naeemahammedtk30@gmail.com" title="Email" class="email">
             <i class="fas fa-envelope"></i> naeemahammedtk30@gmail.com
         </a>
     </div>
