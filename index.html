@@ -71,7 +71,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://github.com/Naeemahmd/naeemahmd.github.io/raw/main/aboutme.png') no-repeat center center;
+            background: url('https://github.com/Naeemahmd/naeemahmd.github.io/raw/main/contacts.png') no-repeat center center;
             background-size: cover;
             filter: blur(8px); /* Adjust the blur intensity */
             z-index: 0; /* Place behind text */
@@ -101,6 +101,81 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
+        #experience {
+            background-color: #0a1733; /* Dark blue background */
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            width: 80%;
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 60px;
+            opacity: 0; /* Hidden by default */
+            transform: translateX(-50px); /* Initial slide-in animation */
+            transition: all 0.5s ease-in-out;
+        }
+
+        .experience-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 10px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            height: 100%;
+            width: 5px;
+            background-color: #4CAF50; /* Green line for timeline */
+            border-radius: 2.5px;
+        }
+
+        .timeline:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+        }
+
+        .experience-item.show {
+            opacity: 1; /* Fully visible when scrolled into view */
+            transform: translateX(0); /* Stops sliding */
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -118,6 +193,7 @@
         }
     </style>
     <script>
+        // Existing Script for Tab Navigation
         function showContent(contentId) {
             var sections = document.getElementsByClassName('content-section');
             for (var i = 0; i < sections.length; i++) {
@@ -131,10 +207,23 @@
             });
             document.querySelector(`[onclick="showContent('${contentId}')"]`).classList.add('active');
         }
+    
+        // New Scroll Animation for Experience Section
+        window.addEventListener('scroll', function() {
+            var elements = document.querySelectorAll('.experience-item');
+            var windowHeight = window.innerHeight;
+    
+            elements.forEach(function(element) {
+                var positionFromTop = element.getBoundingClientRect().top;
+    
+                if (positionFromTop - windowHeight <= 0) {
+                    element.classList.add('show');
+                }
+            });
+        });
     </script>
 </head>
 <body>
-
 <header>
     <h1>Naeem Ahammed Theyyathum Kadavath</h1>
     <p>Data & AI Specialist</p>
@@ -175,38 +264,48 @@
         
     </div>
 
-    <!-- Experience Section -->
+    <!-- Professional Experience Section -->
     <div id="experience" class="content-section">
         <h2>Professional Experience</h2>
-        <h3>Data Science Engineer Intern</h3>
-        <p>IntPurple Technologies | Birkirkara, Malta | Feb 2024 - Oct 2024</p>
-        <ul>
-            <li>Developed backend for role-based access control (RBAC), improving security protocols.</li>
-            <li>Built and refined RESTful APIs with Django for enhanced data integration.</li>
-            <li>Designed the database structure to support RBAC and data collection.</li>
-            <li>Worked closely with cross-functional teams in an agile environment to ensure seamless integration of authentication systems and API endpoints.</li>
-            <li>Collaborated on a chatbot solution  with Azure OpenAI API, speeding up customer onboarding.</li>
-            <li>Created BI dashboards using Metabase for real-time reporting and decision-making.</li>
-            <li>Assisted in the assembly of prototype products for testing purposes.</li>
-        </ul>
-        <h3>Data Scientist Intern</h3>
-        <p>INFOdation B.V | Bodegraven,Netherlands | Sep 2022 - Aug 2023</p>
-        <ul>
-            <li>Built and optimized LSTM models for energy demand forecasting, increasing accuracy by 7% for Kikker Energy.</li>
-            <li>Leveraged Python and SQL for data fetching and processing from 15-minute meter readings. </li>
-            <li>Applied statistical analysis and regression to identify trends and improve forecasting models, reducing MAPE. </li>
-            <li>Implemented supervised ML method for models and trained and fine-tuned models with LSTM networks.</li>
-            <li>Created visualizations using Matplotlib to aid stakeholder decision-making.</li>
-            <li>Integrated external data via APIs and managed projects using GitHub, enhancing collaboration.</li>
-            <li>Deployed machine learning models on GCP with Docker, improving performance by 20%.</li>
-        </ul>
-        <h3>Sales and Quality Analyst Intern </h3>
-        <p>Bizotik | Kerala,India | Sep 2022 - Aug 2023</p>
-        <ul>
-            <li>Analyzed sales trends to support data-driven business decisions.</li>
-            <li>Inspected products to ensure compliance with quality standards and established tolerance levels, reducing defect by 10%.</li>
-            <li>Collaborated on product presentation and advertising, increasing sales by 25%.</li>
-        </ul>
+        <div class="timeline">
+            <div class="experience-item">
+                <h3>Data Science Engineer Intern</h3>
+                <p>IntPurple Technologies | Birkirkara, Malta | Feb 2024 - Oct 2024</p>
+                <ul>
+                    <li>Developed backend for role-based access control (RBAC), improving security protocols.</li>
+                    <li>Built and refined RESTful APIs with Django for enhanced data integration.</li>
+                    <li>Designed the database structure to support RBAC and data collection.</li>
+                    <li>Worked closely with cross-functional teams in an agile environment to ensure seamless integration of authentication systems and API endpoints.</li>
+                    <li>Collaborated on a chatbot solution  with Azure OpenAI API, speeding up customer onboarding.</li>
+                    <li>Created BI dashboards using Metabase for real-time reporting and decision-making.</li>
+                    <li>Assisted in the assembly of prototype products for testing purposes.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Data Scientist Intern</h3>
+                <p>INFOdation B.V | Bodegraven, Netherlands | Sep 2022 - Aug 2023</p>
+                <ul>
+                    <li>Built and optimized LSTM models for energy demand forecasting, increasing accuracy by 7% for Kikker Energy.</li>
+                    <li>Leveraged Python and SQL for data fetching and processing from 15-minute meter readings. </li>
+                    <li>Applied statistical analysis and regression to identify trends and improve forecasting models, reducing MAPE. </li>
+                    <li>Implemented supervised ML method for models and trained and fine-tuned models with LSTM networks.</li>
+                    <li>Created visualizations using Matplotlib to aid stakeholder decision-making.</li>
+                    <li>Integrated external data via APIs and managed projects using GitHub, enhancing collaboration.</li>
+                    <li>Deployed machine learning models on GCP with Docker, improving performance by 20%.</li>
+                </ul>
+            <div>
+
+            <div class="experience-item">
+                <h3>Sales and Quality Analyst Intern</h3>
+                <p>Bizotik | Kerala, India | Jan 2020 - Oct 2020</p>
+                <ul>
+                    <li>Analyzed sales trends to support data-driven business decisions.</li>
+                    <li>Inspected products to ensure compliance with quality standards and established tolerance levels, reducing defect by 10%.</li>
+                    <li>Collaborated on product presentation and advertising, increasing sales by 25%.</li>
+                </ul>
+            <div>
+        <div>
     </div>
 
     <!-- Skills Section -->
