@@ -54,14 +54,14 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .tabs button:hover, .tabs button.active {
-            background-color: #4CAF50;
+            background-color: #6eb170;
             color: white;
         }
         #aboutMe {
             position: relative;
             padding: 50px;
             border-radius: 10px;
-            color: white; /* Ensure text is readable */
+            color: rgb(30, 21, 21); /* Ensure text is readable */
             overflow: hidden; /* To contain the blurred background */
         }
         #aboutMe::before {
@@ -80,6 +80,76 @@
         #aboutMe h2, #aboutMe p {
             position: relative;
             z-index: 1; /* Place in front of the blurred background */
+        }
+        /* Styling for the Experience Timeline */
+        #experience {
+            background-color: #19326a; /* Dark blue background */
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Timeline Structure */
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            width: 80%;
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 60px;
+            opacity: 0; /* Initially hidden */
+            transform: translateX(-50px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .experience-item h3 {
+            font-size: 1.5rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 10px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            height: 100%;
+            width: 5px;
+            background-color: #4CAF50;
+            border-radius: 2.5px;
+        }
+
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+        }
+
+        .experience-item.show {
+            opacity: 1;
+            transform: translateX(0);
         }
         .content-section {
             display: none;
@@ -101,81 +171,6 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
-        #experience {
-            background-color: #0a1733; /* Dark blue background */
-            color: white;
-            padding: 50px;
-            border-radius: 10px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .timeline {
-            position: relative;
-            margin: 0 auto;
-            padding: 20px 0;
-            width: 80%;
-        }
-
-        .experience-item {
-            position: relative;
-            margin-bottom: 30px;
-            padding-left: 60px;
-            opacity: 0; /* Hidden by default */
-            transform: translateX(-50px); /* Initial slide-in animation */
-            transition: all 0.5s ease-in-out;
-        }
-
-        .experience-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .experience-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .experience-item ul li {
-            margin-bottom: 10px;
-        }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 30px;
-            height: 100%;
-            width: 5px;
-            background-color: #4CAF50; /* Green line for timeline */
-            border-radius: 2.5px;
-        }
-
-        .timeline:after {
-            content: '';
-            display: table;
-            clear: both;
-        }
-
-        .experience-item:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20px;
-            width: 20px;
-            height: 20px;
-            background-color: #4CAF50;
-            border-radius: 50%;
-        }
-
-        .experience-item.show {
-            opacity: 1; /* Fully visible when scrolled into view */
-            transform: translateX(0); /* Stops sliding */
-        }
-
         footer {
             text-align: center;
             padding: 30px;
@@ -193,7 +188,7 @@
         }
     </style>
     <script>
-        // Existing Script for Tab Navigation
+        // Tab navigation script
         function showContent(contentId) {
             var sections = document.getElementsByClassName('content-section');
             for (var i = 0; i < sections.length; i++) {
@@ -206,10 +201,15 @@
                 tab.classList.remove('active');
             });
             document.querySelector(`[onclick="showContent('${contentId}')"]`).classList.add('active');
+    
+            // Only trigger scroll animation when "Experience" section is active
+            if (contentId === 'experience') {
+                triggerScrollAnimation();
+            }
         }
     
-        // New Scroll Animation for Experience Section
-        window.addEventListener('scroll', function() {
+        // Scroll animation for the timeline
+        function triggerScrollAnimation() {
             var elements = document.querySelectorAll('.experience-item');
             var windowHeight = window.innerHeight;
     
@@ -220,8 +220,16 @@
                     element.classList.add('show');
                 }
             });
+        }
+    
+        // Listen for scroll events on the experience section
+        window.addEventListener('scroll', function() {
+            if (document.getElementById('experience').classList.contains('active')) {
+                triggerScrollAnimation();
+            }
         });
     </script>
+    
 </head>
 <body>
 <header>
@@ -261,7 +269,6 @@
     <div id="aboutMe" class="content-section active">
         <h2>About Me</h2>
         <p>I am a data and AI specialist with over 2 years of experience. My expertise lies in designing and deploying data solutions that support decision-making, building machine learning models, and creating business intelligence dashboards. I have an entrepreneurial mindset and a strong adaptability, always seeking innovative ways to apply cutting-edge technology to solve real-world problems. I’m passionate about driving transformative change and delivering data-driven solutions to complex challenges.</p>
-        
     </div>
 
     <!-- Professional Experience Section -->
